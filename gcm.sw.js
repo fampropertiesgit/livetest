@@ -8,6 +8,7 @@ firebase.initializeApp({
 });
 
 const messaging = firebase.messaging();
+
 let notificationAction = "";
 
 // [START background_handler]
