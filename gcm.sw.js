@@ -11,7 +11,7 @@ const messaging = firebase.messaging();
 let notificationAction = "";
 
 // [START background_handler]
-messaging.setBackgroundMessageHandler(function(payload) {
+messaging.setBackgroundMessageHandler(function (payload) {
   const notificationTitle = payload.data.title;
   notificationAction = payload.data.url;
 
@@ -24,8 +24,7 @@ messaging.setBackgroundMessageHandler(function(payload) {
 });
 // [END background_handler]
 
-self.addEventListener('notificationclick', function(event) {
+self.addEventListener('notificationclick', function (event) {
   event.notification.close();
   event.waitUntil(self.clients.openWindow(notificationAction));
 });
-
